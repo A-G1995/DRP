@@ -67,6 +67,8 @@ class DatabaseService {
                     it.commit()
 
                 }
+
+
                 logger.info("service is up")
                 return "service is up"
 
