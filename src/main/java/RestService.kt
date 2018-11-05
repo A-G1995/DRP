@@ -17,9 +17,10 @@ fun redisRestTest(){
 }
 
 fun databaseTest(){
+
     http.get("/report") {_ , resp ->
 
-        resp.sendJson(databaseService.checkInsertToDB())
+        resp.sendJson(databaseService.checkInsertToDatabase())
 
     }
 }
@@ -27,7 +28,7 @@ fun databaseTest(){
 
 fun main(args: Array<String>) {
 
-    //redisRestTest()
+//    redisRestTest()
     databaseTest()
 
 }
