@@ -1,4 +1,4 @@
-
+package cache
 import org.apache.log4j.Logger
 import redis.clients.jedis.JedisPool
 import redis.clients.jedis.JedisPoolConfig
@@ -6,7 +6,7 @@ import redis.clients.jedis.JedisPoolConfig
 
 class RedisService {
 
-    val logger = Logger.getLogger("logger")
+    val logger = Logger.getLogger("database.getLogger")
 
     val jedisPoolConfig = JedisPoolConfig()
     val jedisPool = JedisPool(jedisPoolConfig, "localhost", 6379)

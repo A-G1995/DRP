@@ -1,4 +1,5 @@
-
+package database
+import config.DatabaseConfig
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -7,11 +8,9 @@ import javax.sql.DataSource;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.log4j.Logger
-import java.sql.ResultSet
 
 
-
-val logger = Logger.getLogger("logger")
+val logger = Logger.getLogger("database.getLogger")
 val appConfig = DatabaseConfig()
 
 class DatabaseService {
@@ -43,7 +42,7 @@ class DatabaseService {
 
                 datasource = HikariDataSource(config)
             } catch (e: Exception) {
-                logger.warn("error in config")
+                logger.warn("error in rest.getConsumerConfig")
             }
 
         }
@@ -96,7 +95,7 @@ class DatabaseService {
 
 
     /*fun checkSelectFromDatabase(): String {
-        val dataSourcee = DatabaseService().getDataSource()
+        val dataSourcee = database.DatabaseService().getDataSource()
         var connection: Connection? = null
         val stmt = connection?.createStatement()
         val rs = stmt?.executeQuery("SELECT * FROM users")
@@ -105,7 +104,7 @@ class DatabaseService {
 
                 while (rs!!.next()) {
                     val name = rs.getString("name")
-                    logger.info(name + "\n")
+                    database.getLogger.info(name + "\n")
                     return name
                 }
 

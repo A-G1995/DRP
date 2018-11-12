@@ -1,3 +1,5 @@
+package extensions
+
 import com.google.gson.GsonBuilder
 import spark.Response
 
