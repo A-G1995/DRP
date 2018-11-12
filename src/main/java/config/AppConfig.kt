@@ -36,3 +36,4 @@ class KafkaProducerConfig{
     val valueSerializer = "org.apache.kafka.common.serialization.StringSerializer"
 
 }
+
